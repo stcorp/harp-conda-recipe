@@ -1,0 +1,48 @@
+{% set version = "1.12" %}
+{% set sha256 = "044a3c50d93b56181c42ad6e2fdd50691370ebc7613b49f1476a77323d976871" %}
+{% set tag = version %}
+
+package:
+  name: harp
+  version: {{ version }} 
+
+source:
+  url: https://github.com/stcorp/harp/releases/download/{{ tag }}/harp-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  script_env:
+    - SDKROOT  # [osx]
+
+requirements:
+  build:
+    - cmake
+    - bison  # [not win]
+    - flex  # [not win]
+    - m2-bison  # [win]
+    - m2-flex  # [win]
+    - coda
+    - python
+    - numpy
+    - cffi
+    - zlib
+    - hdf4
+    - hdf5
+    - jpeg
+    - r-base
+
+  run:
+    - coda
+    - python
+    - numpy
+    - cffi
+    - zlib
+    - hdf4
+    - hdf5
+    - jpeg
+
+about:
+  home: https://github.com/stcorp/harp
+  license: BSD
+  license_file: COPYING
+
