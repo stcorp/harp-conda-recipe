@@ -32,6 +32,7 @@ requirements:
     - r-base
 
   run:
+    - vs2015_runtime  # [win]
     - coda
     - python
     - numpy
