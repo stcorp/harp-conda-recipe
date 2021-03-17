@@ -1,5 +1,5 @@
-{% set version = "1.12" %}
-{% set sha256 = "044a3c50d93b56181c42ad6e2fdd50691370ebc7613b49f1476a77323d976871" %}
+{% set version = "1.13" %}
+{% set sha256 = "730992c1427d77feb2a41ee33c0818b28324f125a0ee99255a55c81997cb263c" %}
 {% set tag = version %}
 
 package:
@@ -11,6 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  number: 0
   script_env:
     - SDKROOT  # [osx]
 
